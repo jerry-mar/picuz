@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="2dp" android:layout_width="wrap_content"
+    android:onClick="imageSelect"
+    android:layout_height="75dp">
+
+    <com.jerry_mar.picuz.view.ImageView
+        android:id="@+id/image_target"
+        android:layout_width="0dp"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent" />
+
+    <ImageView android:src="@drawable/picuz_del"
+        android:layout_gravity="right"
+        android:id="@+id/picuz_del"
+        android:layout_width="15dp"
+        android:onClick="delele"
+        android:layout_margin="5dp"
+        android:layout_height="15dp" />
+
+</FrameLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="picuz_background">#191919</color>
+    <color name="picuz_title">#383A3F</color>
+    <color name="picuz_line">#2C2D31</color>
+    <color name="picuz_font_grey">#969696</color>
+    <color name="picuz_font">#1AAD19</color>
+    <color name="picuz_scene">#50000000</color>
+    <color name="picuz_font_hollow">#801AAD19</color>
+
+</resources>

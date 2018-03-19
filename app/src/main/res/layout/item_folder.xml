@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="1dp"
+    android:layout_marginBottom="1dp"
+    android:padding="15dp"
+    android:onClick="selectFolder"
+    android:background="@android:color/white">
+
+    <ImageView android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:padding="10dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/picuz_folder"
+        android:id="@+id/folder_cover"/>
+
+    <LinearLayout android:layout_weight="1"
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_height="match_parent">
+
+        <TextView android:layout_weight="1"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:id="@+id/folder_name"
+            android:gravity="bottom"
+            android:layout_marginBottom="5dp"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <TextView android:layout_weight="1"
+            android:textSize="14sp"
+            android:gravity="top"
+            android:id="@+id/image_num"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/picuz_font_grey"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+    </LinearLayout>
+
+    <ImageView android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:id="@+id/folder_cursor"/>
+
+</LinearLayout>
