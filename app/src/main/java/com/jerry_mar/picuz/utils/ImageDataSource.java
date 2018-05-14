@@ -16,6 +16,7 @@ import android.os.Message;
 import android.provider.MediaStore;
 import android.util.SparseArray;
 
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 
@@ -116,6 +117,7 @@ public class ImageDataSource implements LoaderManager.LoaderCallbacks<Cursor> {
 
     public static void load(final String path, final ImageView imageView) {
         load(path, imageView, null);
+        imageView.requestLayout();
     }
 
     public static void load(final String path, final ImageView imageView, final String newKey) {
@@ -132,7 +134,7 @@ public class ImageDataSource implements LoaderManager.LoaderCallbacks<Cursor> {
             if (imageView.isShown()) {
                 executor.execute(new Task(path, newKey, imageView, cache, handler));
             } else {
-                imageView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                ViewTreeObserver.OnGlobalLayoutListener listener = new ViewTreeObserver.OnGlobalLayoutListener() {
                     private boolean intercept;
                     @Override
                     public void onGlobalLayout() {
@@ -145,7 +147,12 @@ public class ImageDataSource implements LoaderManager.LoaderCallbacks<Cursor> {
                             executor.execute(new Task(path, newKey, imageView, cache, handler));
                         }
                     }
-                });
+                };
+                if (imageView.getWidth() != 0 && imageView.getHeight() != 0) {
+                    listener.onGlobalLayout();
+                } else {
+                    imageView.getViewTreeObserver().addOnGlobalLayoutListener(listener);
+                }
             }
         }
     }

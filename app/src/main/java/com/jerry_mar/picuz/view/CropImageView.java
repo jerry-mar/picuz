@@ -133,7 +133,6 @@ public class CropImageView extends AppCompatImageView {
     @Override
     public void setImageURI(Uri uri) {
         ImageDataSource.load(uri.toString(), this, "operator:");
-        requestLayout();
     }
 
     @Override

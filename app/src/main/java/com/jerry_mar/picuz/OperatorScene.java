@@ -42,7 +42,6 @@ public class OperatorScene {
             root.findViewById(R.id.operator_bar).setVisibility(View.GONE);
         }
         ImageDataSource.load(path, target, "operator:");
-        target.requestLayout();
     }
 
     public void plastic(boolean b) {
