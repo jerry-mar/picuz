@@ -159,8 +159,8 @@ public class ImaryController extends Activity implements
     public void selectFolder(View view) {
         Folder folder = (Folder) view.getTag();
         imageAdapter.update(folder.getImages());
-        folder.setUsed(true);
         folderAdapter.getCurFolder().setUsed(false);
+        folder.setUsed(true);
         folderAdapter.notifyDataSetChanged();
         scene.hideFolder();
         scene.setFolderName(folder.getName());

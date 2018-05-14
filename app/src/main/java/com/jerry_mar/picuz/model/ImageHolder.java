@@ -23,6 +23,7 @@ public class ImageHolder extends RecyclerView.ViewHolder {
         if (image != null) {
             this.image.setPadding(0, 0, 0, 0);
             ImageDataSource.load(image.getPath(), this.image);
+            this.image.requestLayout();
             if (select != null) {
                 select.setImageResource(image.isUsed() ? R.drawable.pizuc_en : R.drawable.picuz_un);
                 select.setVisibility(View.VISIBLE);

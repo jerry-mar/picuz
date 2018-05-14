@@ -44,5 +44,6 @@ public class FolderHolder extends RecyclerView.ViewHolder {
 
     public void setImage(Image image) {
         ImageDataSource.load(image.getPath(), this.image);
+        this.image.requestLayout();
     }
 }

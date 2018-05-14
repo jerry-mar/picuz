@@ -34,7 +34,7 @@ public class Task implements Runnable, ThreadLevel {
         try {
             Bitmap bitmap = null;
             File file = new File(path);
-            if (file.exists()) {
+            if (file.exists() && !file.isHidden()) {
                 int width = view.getWidth();
                 int height = view.getHeight();
                 if (width == 0 || height == 0) {

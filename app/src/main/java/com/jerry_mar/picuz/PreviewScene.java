@@ -52,6 +52,7 @@ public class PreviewScene {
 
     public void show(Image image) {
         ImageDataSource.load(image.getPath(), this.image, "preview:");
+        this.image.requestLayout();
     }
 
     public void loading() {
