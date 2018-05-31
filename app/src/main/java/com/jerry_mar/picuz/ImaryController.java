@@ -265,18 +265,16 @@ public class ImaryController extends Activity implements
             }
             break;
             case 0xF0 : {
-                if (intent != null) {
-                    Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-                    Uri contentUri = Uri.fromFile(cameraFile);
-                    mediaScanIntent.setData(contentUri);
-                    sendBroadcast(mediaScanIntent);
-                    Image image = new Image();
-                    image.setPath(cameraFile.getAbsolutePath());
-                    if (!config.isForce()) {
-                        gotoPreview(image);
-                    } else {
-                        gotoOperator(image);
-                    }
+                Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                Uri contentUri = Uri.fromFile(cameraFile);
+                mediaScanIntent.setData(contentUri);
+                sendBroadcast(mediaScanIntent);
+                Image image = new Image();
+                image.setPath(cameraFile.getAbsolutePath());
+                if (!config.isForce()) {
+                    gotoPreview(image);
+                } else {
+                    gotoOperator(image);
                 }
             }
             break;
